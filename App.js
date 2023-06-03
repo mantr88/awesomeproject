@@ -5,15 +5,21 @@ import {
   Text,
   View,
 } from "react-native";
-import imageBG from "./src/image/Photo BG-2.jpeg";
-import { RegistrationScreen } from "./src/Screens/RegistrationScreen";
+import imageBG from "./assets/image/photoBg.jpeg";
+import { RegistrationScreen } from "./Screens/RegistrationScreen";
+import { useFonts } from "expo-font";
 
 const App = () => {
+  const [fontsLoaded] = useFonts({
+    Roboto400: require("./assets/fonts/Roboto/Roboto-Regular.ttf"),
+    Roboto500: require("./assets/fonts/Roboto/Roboto-Medium.ttf"),
+  });
+
   return (
     <View style={styles.container}>
       <ImageBackground
         source={imageBG}
-        resizeMode="cover"
+        resizeMode="stretch"
         style={styles.bgImage}
       >
         <RegistrationScreen />
@@ -25,12 +31,12 @@ const App = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    color: "#212121",
+    justifyContent: "center",
+    width: "100%",
   },
   bgImage: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: "flex-end",
   },
 });
 
