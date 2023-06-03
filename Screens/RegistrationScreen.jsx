@@ -6,13 +6,16 @@ import {
   TextInput,
   View,
   TouchableOpacity,
+  Pressable,
 } from "react-native";
+import { AntDesign } from "@expo/vector-icons";
 
 export const RegistrationScreen = () => {
   return (
     <View style={style.wrap}>
-      <View>
+      <View style={style.avatarWrap}>
         <Image />
+        <AntDesign name="pluscircleo" size={25} style={style.cross} />
       </View>
       <Text style={style.title}>Peєстрація</Text>
       <TextInput style={style.input} placeholder="Логін"></TextInput>
@@ -29,8 +32,12 @@ export const RegistrationScreen = () => {
           <Text style={style.showPswrd}>Показати</Text>
         </TouchableOpacity>
       </View>
+      <View style={style.containerBtn}>
+        <Pressable style={style.submitBtn}>
+          <Text style={style.textBtn}>Зареєстуватися</Text>
+        </Pressable>
+      </View>
       <Text>Вже є акаунт? Увійти</Text>
-      <Button title="Зареєстуватися" style={style.submitBtn}></Button>
     </View>
   );
 };
@@ -52,25 +59,29 @@ const style = StyleSheet.create({
     borderRadius: "25px 25px 0px 0px",
   },
   avatarWrap: {
-    // position: "relative",
-    // top: -60,
-    // alignSelf: "center",
+    position: "relative",
+    top: -60,
+    alignSelf: "center",
     width: 120,
     height: 120,
+
     backgroundColor: "#F6F6F6",
     borderRadius: 16,
-    border: 2,
-    borderStyle: "solid",
-    borderColor: "#ff6347",
+  },
+  cross: {
+    position: "absolute",
+    top: "60%",
+    left: "90%",
+
+    color: "#FF6C00",
   },
   title: {
-    marginBottom: 16,
+    // marginBottom: 16,
     fontFamily: "Roboto500",
     fontSize: 30,
     lineHeight: 35,
   },
   input: {
-    // padding: "16px auto 15px 16px ",
     paddingBottom: 15,
     paddingLeft: 16,
     paddingRight: 16,
@@ -93,7 +104,7 @@ const style = StyleSheet.create({
   },
   passwordShowIndct: {
     position: "absolute",
-    top: "40%",
+    top: "45%",
     right: 16,
     transform: [{ translateY: -6 }],
   },
@@ -102,10 +113,30 @@ const style = StyleSheet.create({
     lineHeight: 19,
     color: "#1B4371",
   },
+  containerBtn: {
+    position: "relative",
+    flex: 1,
+    justifyContent: "flex-start",
+    // alignItems: "center",
+    width: "100%",
+  },
   submitBtn: {
-    background: "#FF6C00",
+    position: "relative",
+    paddingVertical: 16,
+    marginHorizontal: "auto",
+    backgroundColor: "#FF6C00",
     borderRadius: "100px",
-
+  },
+  textBtn: {
+    // display: "flex",
+    // justifyContent: "center",
+    // alignItems: "center",
+    textAlign: "center",
+    fontSize: 16,
     color: "#fff",
+
+    fontFamily: "Roboto400",
+    fontSize: 16,
+    lineHeight: 19,
   },
 });
