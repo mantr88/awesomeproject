@@ -7,11 +7,16 @@ import {
   View,
   TouchableOpacity,
   Pressable,
+  KeyboardAvoidingView,
 } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 
 export const RegistrationScreen = () => {
   return (
+    // <KeyboardAvoidingView
+    //   behavior={Platform.OS === "ios" ? "padding" : "height"}
+    //   style={style.keyboard}
+    // >
     <View style={style.wrap}>
       <View style={style.avatarWrap}>
         <Image />
@@ -36,19 +41,30 @@ export const RegistrationScreen = () => {
         <Pressable style={style.submitBtn}>
           <Text style={style.textBtn}>Зареєстуватися</Text>
         </Pressable>
+        <View style={style.textBox}>
+          <Text style={style.entriesText}>Вже є акаунт?</Text>
+          <Text style={style.entriesLink}> Увійти</Text>
+        </View>
       </View>
-      <Text>Вже є акаунт? Увійти</Text>
     </View>
+    // </KeyboardAvoidingView>
   );
 };
 
 const style = StyleSheet.create({
+  // keyboard: {
+  //   flex: 1,
+  //   alignItems: "center",
+  //   justifyContent: "flex-end",
+
+  //   height: "100%",
+  //   width: "100%",
+  // },
   wrap: {
     position: "relative",
     top: "33%",
     padding: 16,
     flex: 1,
-    justifyContent: "flex-start",
     gap: 16,
     width: "100%",
     alignItems: "center",
@@ -76,7 +92,7 @@ const style = StyleSheet.create({
     color: "#FF6C00",
   },
   title: {
-    // marginBottom: 16,
+    marginTop: -32,
     fontFamily: "Roboto500",
     fontSize: 30,
     lineHeight: 35,
@@ -117,7 +133,7 @@ const style = StyleSheet.create({
     position: "relative",
     flex: 1,
     justifyContent: "flex-start",
-    // alignItems: "center",
+    marginTop: 27,
     width: "100%",
   },
   submitBtn: {
@@ -128,9 +144,6 @@ const style = StyleSheet.create({
     borderRadius: "100px",
   },
   textBtn: {
-    // display: "flex",
-    // justifyContent: "center",
-    // alignItems: "center",
     textAlign: "center",
     fontSize: 16,
     color: "#fff",
@@ -138,5 +151,27 @@ const style = StyleSheet.create({
     fontFamily: "Roboto400",
     fontSize: 16,
     lineHeight: 19,
+  },
+  textBox: {
+    flexDirection: "row",
+    justifyContent: "center",
+    marginTop: 16,
+  },
+  entriesText: {
+    fontFamily: "Roboto400",
+    fontSize: 16,
+    lineHeight: 19,
+    textAlign: "center",
+
+    color: "#1B4371",
+  },
+  entriesLink: {
+    fontFamily: "Roboto400",
+    fontSize: 16,
+    lineHeight: 19,
+    textAlign: "center",
+    textDecorationLine: "underline",
+
+    color: "#1B4371",
   },
 });
