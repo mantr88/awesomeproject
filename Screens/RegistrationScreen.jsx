@@ -10,8 +10,13 @@ import {
   Platform,
 } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
+import { useState } from "react";
 
 export const RegistrationScreen = () => {
+  const [value, onChangeText] = useState("");
+  // const onChange = text => {
+  //   setValue(text);
+  // };
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === "ios" ? "padding" : "height"}
@@ -29,16 +34,15 @@ export const RegistrationScreen = () => {
         <TextInput
           style={styles.input}
           placeholder="Логін"
-        ></TextInput>
+          value={value}
+          onChangeText={(text) => onChangeText(text)}
+        />
         <TextInput
           style={styles.input}
           placeholder="Адреса електронної пошти"
-        ></TextInput>
+        />
         <View style={styles.wrapPswrd}>
-          <TextInput
-            style={styles.input}
-            placeholder="Пароль"
-          ></TextInput>
+          <TextInput style={styles.input} placeholder="Пароль" />
           <TouchableOpacity style={styles.passwordShowIndct}>
             <Text style={styles.showPswrd}>Показати</Text>
           </TouchableOpacity>
