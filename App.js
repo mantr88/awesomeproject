@@ -7,14 +7,15 @@ import {
 } from "react-native";
 import imageBG from "./assets/image/photoBg.jpeg";
 import { RegistrationScreen } from "./Screens/RegistrationScreen";
-import { useFonts } from "expo-font";
+import * as Font from "expo-font";
 
-const App = () => {
-  const [fontsLoaded] = useFonts({
+const fonts = () =>
+  Font.loadAsync({
     Roboto400: require("./assets/fonts/Roboto/Roboto-Regular.ttf"),
     Roboto500: require("./assets/fonts/Roboto/Roboto-Medium.ttf"),
   });
 
+const App = () => {
   return (
     <View style={styles.container}>
       <ImageBackground

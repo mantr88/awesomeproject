@@ -7,7 +7,6 @@ import {
   TouchableOpacity,
   Pressable,
   KeyboardAvoidingView,
-  Platform,
 } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 
@@ -15,54 +14,53 @@ export const RegistrationScreen = () => {
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === "ios" ? "padding" : "height"}
-      style={styles.keyboard}
+      style={style.keyboard}
     >
-      <View style={styles.wrap}>
-        <View style={styles.avatarWrap}>
+      <View style={style.wrap}>
+        <View style={style.avatarWrap}>
+          <Image />
           <AntDesign
             name="pluscircleo"
             size={25}
-            style={styles.cross}
+            style={style.cross}
           />
         </View>
-        <Text style={styles.title}>Peєстрація</Text>
+        <Text style={style.title}>Peєстрація</Text>
         <TextInput
-          style={styles.input}
+          style={style.input}
           placeholder="Логін"
         ></TextInput>
         <TextInput
-          style={styles.input}
+          style={style.input}
           placeholder="Адреса електронної пошти"
         ></TextInput>
-        <View style={styles.wrapPswrd}>
+        <View style={style.wrapPswrd}>
           <TextInput
-            style={styles.input}
+            style={style.input}
             placeholder="Пароль"
           ></TextInput>
-          <TouchableOpacity style={styles.passwordShowIndct}>
-            <Text style={styles.showPswrd}>Показати</Text>
+          <TouchableOpacity style={style.passwordShowIndct}>
+            <Text style={style.showPswrd}>Показати</Text>
           </TouchableOpacity>
         </View>
-        <View style={styles.containerBtn}>
-          <Pressable style={styles.submitBtn}>
-            <Text style={styles.textBtn}>Зареєстуватися</Text>
+        <View style={style.containerBtn}>
+          <Pressable style={style.submitBtn}>
+            <Text style={style.textBtn}>Зареєстуватися</Text>
           </Pressable>
-          <View style={styles.textBox}>
-            <Text style={styles.entriesText}>Вже є акаунт?</Text>
-            <Text style={styles.entriesLink}> Увійти</Text>
+          <View style={style.textBox}>
+            <Text style={style.entriesText}>Вже є акаунт?</Text>
+            <Text style={style.entriesLink}> Увійти</Text>
           </View>
         </View>
       </View>
     </KeyboardAvoidingView>
   );
 };
-
-const styles = StyleSheet.create({
+const style = StyleSheet.create({
   keyboard: {
     flex: 1,
     // alignItems: "center",
     // justifyContent: "flex-end",
-
     // height: "100%",
     // width: "100%",
   },
@@ -78,7 +76,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     lineHeight: 19,
     backgroundColor: "#fff",
-    borderRadius: 25,
+    borderRadius: "25px 25px 0px 0px",
   },
   avatarWrap: {
     position: "relative",
