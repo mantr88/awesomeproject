@@ -39,9 +39,16 @@ export const RegistrationScreen = () => {
         <TextInput
           style={styles.input}
           placeholder="Адреса електронної пошти"
+          value={value}
+          onChangeText={(text) => onChangeText(text)}
         />
         <View style={styles.wrapPswrd}>
-          <TextInput style={styles.input} placeholder="Пароль" />
+          <TextInput
+            style={styles.input}
+            placeholder="Пароль"
+            value={value}
+            onChangeText={(text) => onChangeText(text)}
+          />
           <TouchableOpacity style={styles.passwordShowIndct}>
             <Text style={styles.showPswrd}>Показати</Text>
           </TouchableOpacity>
