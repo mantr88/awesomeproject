@@ -14,9 +14,7 @@ import { useState } from "react";
 
 export const RegistrationScreen = () => {
   const [value, onChangeText] = useState("");
-  // const onChange = text => {
-  //   setValue(text);
-  // };
+
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === "ios" ? "padding" : "height"}
@@ -32,6 +30,7 @@ export const RegistrationScreen = () => {
         </View>
         <Text style={styles.title}>Peєстрація</Text>
         <TextInput
+          keyboardType="default"
           style={styles.input}
           placeholder="Логін"
           value={value}
